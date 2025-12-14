@@ -5,15 +5,21 @@ import {
   Menu, X, PlayCircle, Video, Check, MapPin, 
   Landmark, Smartphone, Calculator, Sigma, TrendingUp,
   Sprout, Hammer, Presentation, UserCheck, ChevronDown, CheckCircle,
-  FileText, MessageCircle, Clock
+  FileText, MessageCircle, Clock, Wallet, Users
 } from 'lucide-react';
-import myPhoto from './assets/mi-foto.jpg';
+
+// =========================================================================
+//  INSTRUCCIONES PARA TU FOTO DE PERFIL
+// =========================================================================
+// 1. Guarda tu foto en la carpeta: src/assets/
+// 2. Descomenta la siguiente línea (borra las dos barras //) y cambia el nombre del archivo:
+// import myPhoto from './assets/mi-foto.jpg';
 
 /* =========================================================================
    1. CONFIGURACIÓN Y DATOS
    ========================================================================= */
 
-const WHATSAPP_NUMBER = "51933499800";
+const WHATSAPP_NUMBER = "51920257909";
 
 const getWhatsAppLink = (message) => {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -299,7 +305,7 @@ const Hero = () => (
             <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
           </span>
           <span className="text-white text-xs md:text-sm font-bold tracking-wide uppercase">
-            Online en Vivo • Vía Google Meet
+            Clases Grupales (Máx 8) • Vía Google Meet
           </span>
         </div>
         <div className="inline-flex items-center bg-yellow-500/10 backdrop-blur-md border border-yellow-500 text-yellow-500 px-4 py-2 rounded-full text-xs md:text-sm font-black uppercase tracking-widest animate-pulse">
@@ -356,13 +362,13 @@ const Methodology = () => (
           <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-slate-900 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white">2</div>
           <h3 className="text-xl font-bold mb-4 mt-4 text-center">Sesiones en Vivo</h3>
           <p className="text-gray-300 mb-4 text-center flex-grow">
-            Clases de <strong>90 minutos</strong> enfocadas en resolver ejercicios tipo examen y aclarar dudas en tiempo real. Interactúa directamente con el profesor.
+            Clases <strong>grupales exclusivas</strong> (máx. 8 alumnos) de <strong>90 minutos</strong> enfocadas en resolver ejercicios tipo examen.
           </p>
           <div className="bg-white/10 p-3 rounded-lg border border-white/20 text-center">
              <p className="text-xs text-yellow-500 font-bold uppercase mb-1 flex justify-center items-center gap-2">
-                <Clock className="w-3 h-3" /> 1.5 Horas por Sesión
+                <Users className="w-3 h-3" /> Aulas de Máx 8 Alumnos
              </p>
-             <p className="text-[10px] text-gray-300">Si faltas, puedes ver la grabación.</p>
+             <p className="text-[10px] text-gray-300">Atención personalizada asegurada.</p>
           </div>
         </div>
 
@@ -409,13 +415,25 @@ const Professor = () => (
         <div className="w-full md:w-1/3 flex justify-center">
           <div className="relative">
             <div className="absolute inset-0 bg-yellow-500 rounded-full transform translate-x-3 translate-y-3"></div>
-            <img src={myPhoto} alt="Profesor IB" className="relative rounded-full w-64 h-64 object-cover border-4 border-white shadow-xl" />
+            
+            {/* SECCIÓN FOTO DE PERFIL */}
+            <img 
+              src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+              /* PARA USAR TU FOTO:
+                 1. Asegúrate de haber descomentado la línea de 'import' arriba.
+                 2. Cambia la línea 'src' de arriba por:
+                    src={myPhoto} 
+              */
+              alt="Profesor IB" 
+              className="relative rounded-full w-64 h-64 object-cover border-4 border-white shadow-xl" 
+            />
+            
           </div>
         </div>
         
         <div className="w-full md:w-2/3 text-center md:text-left">
           <span className="text-blue-900 font-bold uppercase text-sm tracking-wider">Director Académico & Lead Tutor</span>
-          <h2 className="text-3xl font-black text-slate-900 mb-4 mt-2">Hola, soy Raul Santa Cruz</h2>
+          <h2 className="text-3xl font-black text-slate-900 mb-4 mt-2">Hola, soy [Tu Nombre]</h2>
           <p className="text-lg text-gray-700 mb-4">
             Como fundador de <strong>IB Academy</strong>, he diseñado una metodología específica para que domines Física y Matemáticas sin estrés.
           </p>
@@ -537,7 +555,7 @@ const Pricing = () => (
         {/* Plan Individual */}
         <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 flex flex-col hover:border-white transition duration-300">
           <div className="flex justify-between items-start mb-4">
-            <h3 className="text-2xl font-bold">Curso Individual</h3>
+            <h3 className="text-2xl font-bold">1 Curso a Elección</h3>
             <span className="bg-slate-700 text-xs px-2 py-1 rounded">Cualquier Curso</span>
           </div>
           <p className="text-gray-400 text-sm mb-6">Ideal si solo necesitas reforzar una materia específica.</p>
@@ -545,8 +563,22 @@ const Pricing = () => (
             <span className="text-4xl font-bold">S/ 750</span>
             <span className="text-gray-400 ml-2 line-through text-lg">S/ 950</span>
           </div>
+
+          {/* OPCIÓN DE RESERVA - NUEVO */}
+          <div className="mb-6 bg-slate-700/50 p-3 rounded-lg border border-slate-600">
+            <p className="text-sm font-bold text-yellow-400 flex items-center gap-2 mb-1">
+                <Wallet className="w-4 h-4" />
+                ¡Separa tu vacante con S/ 200!
+            </p>
+            <p className="text-xs text-slate-300">Y completa el pago hasta la quincena de Enero.</p>
+          </div>
+
           <ul className="space-y-4 mb-8 flex-grow text-sm">
-            {/* ACTUALIZADO: Duración explicita */}
+            {/* NUEVA CARACTERÍSTICA - GRUPAL */}
+            <li className="flex items-center">
+              <Users className="w-4 h-4 text-yellow-500 mr-3" /> 
+              <strong>Grupo Reducido (Máx. 8 alumnos)</strong>
+            </li>
             <li className="flex items-center">
               <Check className="w-4 h-4 text-yellow-500 mr-3" /> 
               <span><strong>12 Sesiones en Vivo</strong> <span className="text-yellow-500 text-xs">(90 min c/u)</span></span>
@@ -557,7 +589,7 @@ const Pricing = () => (
             <li className="flex items-center"><Check className="w-4 h-4 text-yellow-500 mr-3" /> <strong>3 Evaluaciones con Feedback</strong></li>
           </ul>
           <a 
-            href={getWhatsAppLink("Hola, me gustaria incribir a mi hijo/a en el curso de ...")}
+            href={getWhatsAppLink("Hola, me gustaria separar mi vacante con S/ 200 para el curso de...")}
             target="_blank" 
             rel="noreferrer" 
             className="block w-full text-center bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold py-3 rounded-lg transition"
@@ -575,9 +607,23 @@ const Pricing = () => (
             <span className="text-5xl font-bold">S/ 1,290</span>
             <span className="text-blue-200 ml-2 text-sm">Antes S/ 1,500</span>
           </div>
+
+          {/* OPCIÓN DE RESERVA - NUEVO */}
+          <div className="mb-6 bg-indigo-800/50 p-3 rounded-lg border border-indigo-500/50">
+            <p className="text-sm font-bold text-yellow-400 flex items-center gap-2 mb-1">
+                <Wallet className="w-4 h-4" />
+                ¡Separa tu vacante con S/ 200!
+            </p>
+            <p className="text-xs text-blue-100">Y completa el pago hasta la quincena de Enero.</p>
+          </div>
+
           <ul className="space-y-4 mb-8 flex-grow text-sm">
             <li className="flex items-center"><Star className="w-4 h-4 text-yellow-500 mr-3" /> <strong>Acceso Total a 2 Cursos</strong></li>
-            {/* ACTUALIZADO: Duración explicita */}
+            {/* NUEVA CARACTERÍSTICA - GRUPAL */}
+            <li className="flex items-center">
+              <Users className="w-4 h-4 text-white mr-3" /> 
+              <strong>Grupos Reducidos (Máx. 8 alumnos)</strong>
+            </li>
             <li className="flex items-center">
               <Check className="w-4 h-4 text-white mr-3" /> 
               <span>24 Sesiones en vivo <span className="text-yellow-300 font-bold">(90 min c/u)</span></span>
@@ -587,7 +633,7 @@ const Pricing = () => (
             <li className="flex items-center"><Check className="w-4 h-4 text-white mr-3" /> <strong>Evaluaciones Quincenales</strong></li>
           </ul>
           <a 
-            href={getWhatsAppLink("Hola, quiero aprovechar el Pack Doble con descuento")}
+            href={getWhatsAppLink("Hola, quiero separar mi vacante para el Pack Doble con S/ 200")}
             target="_blank" 
             rel="noreferrer" 
             className="block w-full text-center bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold py-3 rounded-lg transition shadow-lg"
@@ -632,8 +678,10 @@ const FAQ = () => (
       
       <div className="space-y-4">
         {[
+          { q: "¿Son clases particulares o grupales?", a: "Son clases grupales exclusivas (máximo 8 estudiantes). Esto garantiza un ambiente participativo, similar a una clase particular, pero con la riqueza de aprender de las dudas de tus compañeros." },
           { q: "¿Qué pasa si no puedo asistir a una clase en vivo?", a: "No te preocupes. Todas las sesiones se graban y se suben a nuestra plataforma privada el mismo día. Podrás verlas las veces que quieras." },
           { q: "¿Cuáles son los métodos de pago?", a: "Aceptamos transferencias bancarias (BCP, Interbank) y billeteras digitales como Yape o Plin. Escríbenos al WhatsApp para enviarte los datos." },
+          { q: "¿Puedo separar mi vacante?", a: "¡Sí! Puedes asegurar tu precio de preventa abonando S/ 200 ahora y completando el pago restante hasta la quincena de Enero." },
           { q: "¿Necesito comprar algún libro adicional?", a: "No. Nosotros te brindamos todo el material digital, guías de ejercicios y bancos de preguntas (Past Papers) necesarios para el curso." },
           { q: "¿Cómo funcionan las evaluaciones?", a: "Cada dos semanas te enviaremos una evaluación corta para resolver en casa. Nos la envías escaneada y te la devolvemos corregida con comentarios detallados para que sepas exactamente qué mejorar." }
         ].map((item, i) => (
@@ -702,8 +750,7 @@ function App() {
     <div className="font-sans text-slate-800 bg-slate-50 pt-8">
       {/* Banner Superior */}
       <div className="fixed top-0 left-0 w-full bg-red-600 text-white text-xs md:text-sm font-bold text-center py-2 z-50 shadow-md">
-        🔥 ¡ÚLTIMOS DÍAS DE PREVENTA!<br />
-        Asegura tu precio especial hasta el 20 de Diciembre.
+        🔥 ¡ÚLTIMOS DÍAS DE PREVENTA! Asegura tu precio especial hasta el 20 de Diciembre.
       </div>
 
       <Navbar />
