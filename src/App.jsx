@@ -704,7 +704,7 @@ const Footer = () => (
         <ul className="space-y-2">
           <li>
             <a href={getWhatsAppLink("Hola, tengo una consulta")} target="_blank" rel="noreferrer" className="hover:text-white transition flex items-center">
-              <WhatsAppIcon className="mr-2 text-green-500 w-5 h-5" /> +51 933 499 800
+              <WhatsAppIcon className="mr-2 text-green-500 w-5 h-5" /> +51 920 257 909
             </a>
           </li>
           <li className="flex items-center"><ClipboardCheck className="w-4 h-4 mr-2 text-yellow-500" /> info@ibacademy.com</li>
