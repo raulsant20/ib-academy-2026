@@ -750,7 +750,8 @@ function App() {
     <div className="font-sans text-slate-800 bg-slate-50 pt-8">
       {/* Banner Superior */}
       <div className="fixed top-0 left-0 w-full bg-red-600 text-white text-xs md:text-sm font-bold text-center py-2 z-50 shadow-md">
-        🔥 ¡ÚLTIMOS DÍAS DE PREVENTA! Asegura tu precio especial hasta el 20 de Diciembre.
+        🔥 ¡ÚLTIMOS DÍAS DE PREVENTA! <br />
+        Asegura tu precio especial hasta el 20 de Diciembre.
       </div>
 
       <Navbar />
