@@ -8,6 +8,8 @@ import {
   FileText, MessageCircle, Clock, Wallet, Users
 } from 'lucide-react';
 
+import myPhoto from './assets/foto4.jpeg';
+
 // =========================================================================
 //  INSTRUCCIONES PARA TU FOTO DE PERFIL
 // =========================================================================
@@ -19,7 +21,7 @@ import {
    1. CONFIGURACIÓN Y DATOS
    ========================================================================= */
 
-const WHATSAPP_NUMBER = "51920257909";
+const WHATSAPP_NUMBER = "51933499800";
 
 const getWhatsAppLink = (message) => {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -55,7 +57,7 @@ const COURSES_DATA = [
   {
     id: 'fisica-ib',
     title: "Física IB",
-    grade: "5to Secundaria (SL)",
+    grade: "5to Secundaria",
     highlightText: "Incluye Nivelación 4to",
     description: "Reforzamos tu base de Mecánica (4to) y adelantamos Campos (5to).",
     color: "indigo",
@@ -309,7 +311,7 @@ const Hero = () => (
           </span>
         </div>
         <div className="inline-flex items-center bg-yellow-500/10 backdrop-blur-md border border-yellow-500 text-yellow-500 px-4 py-2 rounded-full text-xs md:text-sm font-black uppercase tracking-widest animate-pulse">
-          <Calendar className="w-4 h-4 mr-2" /> Inicio: 5 de Enero
+          <Calendar className="w-4 h-4 mr-2" /> Inicio: 6 de Enero
         </div>
       </div>
       <h1 className="text-4xl md:text-7xl font-sans font-black text-white mb-6 leading-tight drop-shadow-xl">
@@ -418,7 +420,7 @@ const Professor = () => (
             
             {/* SECCIÓN FOTO DE PERFIL */}
             <img 
-              src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+              src={myPhoto} 
               /* PARA USAR TU FOTO:
                  1. Asegúrate de haber descomentado la línea de 'import' arriba.
                  2. Cambia la línea 'src' de arriba por:
@@ -433,7 +435,7 @@ const Professor = () => (
         
         <div className="w-full md:w-2/3 text-center md:text-left">
           <span className="text-blue-900 font-bold uppercase text-sm tracking-wider">Director Académico & Lead Tutor</span>
-          <h2 className="text-3xl font-black text-slate-900 mb-4 mt-2">Hola, soy [Tu Nombre]</h2>
+          <h2 className="text-3xl font-black text-slate-900 mb-4 mt-2">Hola, soy Raul Santa Cruz</h2>
           <p className="text-lg text-gray-700 mb-4">
             Como fundador de <strong>IB Academy</strong>, he diseñado una metodología específica para que domines Física y Matemáticas sin estrés.
           </p>
@@ -528,7 +530,7 @@ const Testimonials = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           { text: "Tenía miedo de entrar a 5to sin base. En la primera semana repasamos lo que me faltaba de mecánica y pude entender los temas nuevos sin problemas.", author: "Camila R., Colegio Abraham Lincoln" },
-          { text: "Math AA SL se me hacía difícil, pero aquí me enseñaron trucos para resolver el Paper 1 sin calculadora. Súper recomendado.", author: "Sebastián M." },
+          { text: "Math AA se me hacía difícil, pero aquí me enseñaron trucos para resolver el Paper 1 sin calculadora. Súper recomendado.", author: "Sebastián M." },
           { text: "Poder ver las grabaciones de los temas de 4to antes de la clase en vivo me salvó. Llegaba a la clase lista para participar.", author: "Andrea L." }
         ].map((item, i) => (
           <div key={i} className="bg-slate-50 p-6 rounded-xl shadow-sm border border-slate-100">
@@ -548,7 +550,7 @@ const Pricing = () => (
       <div className="text-center mb-16">
         <span className="text-yellow-500 font-bold tracking-widest uppercase">Inversión Inteligente</span>
         <h2 className="text-4xl font-sans font-black mt-2">Planes de Verano</h2>
-        <p className="text-gray-300 mt-4">Precios de Preventa válidos hasta el 20 de Diciembre.</p>
+        <p className="text-gray-300 mt-4">Precios de Preventa válidos hasta el 3 de Enero.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -585,7 +587,6 @@ const Pricing = () => (
             </li>
             <li className="flex items-center"><Check className="w-4 h-4 text-yellow-500 mr-3" /> Grabaciones + Videoteca</li>
             <li className="flex items-center"><Check className="w-4 h-4 text-yellow-500 mr-3" /> Material y Ejercicios</li>
-            <li className="flex items-center"><Check className="w-4 h-4 text-yellow-500 mr-3" /> Acceso a Grupo de WhatsApp</li>
             <li className="flex items-center"><Check className="w-4 h-4 text-yellow-500 mr-3" /> <strong>3 Evaluaciones con Feedback</strong></li>
           </ul>
           <a 
@@ -680,8 +681,8 @@ const FAQ = () => (
         {[
           { q: "¿Son clases particulares o grupales?", a: "Son clases grupales exclusivas (máximo 8 estudiantes). Esto garantiza un ambiente participativo, similar a una clase particular, pero con la riqueza de aprender de las dudas de tus compañeros." },
           { q: "¿Qué pasa si no puedo asistir a una clase en vivo?", a: "No te preocupes. Todas las sesiones se graban y se suben a nuestra plataforma privada el mismo día. Podrás verlas las veces que quieras." },
-          { q: "¿Cuáles son los métodos de pago?", a: "Aceptamos transferencias bancarias (BCP, Interbank) y billeteras digitales como Yape o Plin. Escríbenos al WhatsApp para enviarte los datos." },
-          { q: "¿Puedo separar mi vacante?", a: "¡Sí! Puedes asegurar tu precio de preventa abonando S/ 200 ahora y completando el pago restante hasta la quincena de Enero." },
+          { q: "¿Cuáles son los métodos de pago?", a: "Aceptamos transferencias bancarias (BCP, BBVA, Scotiabank) y billeteras digitales como Yape o Plin. Escríbenos al WhatsApp para enviarte los datos." },
+          { q: "¿Puedo separar mi vacante?", a: "¡Sí! Puedes asegurar tu precio de preventa abonando S/200 ahora y completando el pago restante hasta la quincena de Enero." },
           { q: "¿Necesito comprar algún libro adicional?", a: "No. Nosotros te brindamos todo el material digital, guías de ejercicios y bancos de preguntas (Past Papers) necesarios para el curso." },
           { q: "¿Cómo funcionan las evaluaciones?", a: "Cada dos semanas te enviaremos una evaluación corta para resolver en casa. Nos la envías escaneada y te la devolvemos corregida con comentarios detallados para que sepas exactamente qué mejorar." }
         ].map((item, i) => (
@@ -704,7 +705,7 @@ const Footer = () => (
         <ul className="space-y-2">
           <li>
             <a href={getWhatsAppLink("Hola, tengo una consulta")} target="_blank" rel="noreferrer" className="hover:text-white transition flex items-center">
-              <WhatsAppIcon className="mr-2 text-green-500 w-5 h-5" /> +51 920 257 909
+              <WhatsAppIcon className="mr-2 text-green-500 w-5 h-5" /> +51 933 499 800
             </a>
           </li>
           <li className="flex items-center"><ClipboardCheck className="w-4 h-4 mr-2 text-yellow-500" /> info@ibacademy.com</li>
@@ -751,7 +752,7 @@ function App() {
       {/* Banner Superior */}
       <div className="fixed top-0 left-0 w-full bg-red-600 text-white text-xs md:text-sm font-bold text-center py-2 z-50 shadow-md">
         🔥 ¡ÚLTIMOS DÍAS DE PREVENTA! <br />
-        Asegura tu precio especial hasta el 20 de Diciembre.
+        Asegura tu precio especial hasta el 3 de Enero.
       </div>
 
       <Navbar />
